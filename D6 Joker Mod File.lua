@@ -68,7 +68,7 @@ SMODS.D6_Side = SMODS.GameObject:extend {
 		G.P_D6_SIDES[self.key] = self
 		if not G.P_CENTER_POOLS[self.set] then G.P_CENTER_POOLS[self.set] = {} end
 		SMODS.insert_pool(G.P_CENTER_POOLS[self.set], self)
-		self.reverse_lookup_name[self.loc_txt.label] = self.key
+		self.reverse_lookup_name[G.localization.descriptions["D6 Side"][self.key:lower()].label or self.loc_txt.label] = self.key
 	end,
 	process_loc_text = function(self)
 		if not G.localization.descriptions["D6 Side"] then G.localization.descriptions["D6 Side"] = {} end
