@@ -6,23 +6,22 @@ return {
 		},
 		["dictionary"] = {
 			["k_na"] = "N/A",
-			["k_created"] = "Created!",
+			["k_created"] = "生成！",
 			["b_d6_sides"] = "骰面",
 		},
 	},
 	["descriptions"] = {
 		["Joker"] = {
 			["j_dsix_casino_die"] = {
-				["name"] = "Casino Die",
+				["name"] = "赌场骰子",
 				["text"] = {
-					"Better hedge your bets",
+					"别在一棵树上吊死",
 				},
 			},
 			["j_dsix_chips_die"] = {
-				["name"] = "Chips Die",
+				["name"] = "筹码骰子",
 				["text"] = {
-					"Just a basic chips",
-					"die, nothing more",
+					"稀松平常的筹码骰子"
 				},
 			},
 			["j_dsix_golden_plus_die"] = {
@@ -32,9 +31,10 @@ return {
 				},
 			},
 			["j_dsix_casino_plus_die"] = {
-				["name"] = "Casino Die+",
+				["name"] = "赌场骰子+",
 				["text"] = {
-					"It's all or nothing",
+					"要么一夜暴富",
+					"要么输光衣服",
 				},
 			},
 			["j_dsix_insurance_plus_die"] = {
@@ -52,17 +52,15 @@ return {
 				},
 			},
 			["j_dsix_planet_die"] = {
-				["name"] = "Planet Die",
+				["name"] = "星球骰子",
 				["text"] = {
-					"This die was crafted by",
-					"celestial beings",
+					"外星人做的骰子",
 				},
 			},
 			["j_dsix_tarot_plus_die"] = {
-				["name"] = "Tarot Die+",
+				["name"] = "塔罗骰子+",
 				["text"] = {
-					"A more compelling method",
-					"of tarot reading",
+					"下辈子的命都能给你算出来",
 				},
 			},
 			["j_dsix_impure_gutless_die"] = {
@@ -75,9 +73,9 @@ return {
 				},
 			},
 			["j_dsix_support_die"] = {
-				["name"] = "Support Die",
+				["name"] = "支援骰子",
 				["text"] = {
-					"Always willing to help!",
+					"时刻待命，乐于助人！",
 				},
 			},
 			["j_dsix_planet_plus_die"] = {
@@ -266,11 +264,11 @@ return {
 				},
 			},
 			["juggler_plus_side"] = {
-				["label"] = "Juggler+",
-				["name"] = "{C:attention}Juggler+{}",
+				["label"] = "杂技演员+",
+				["name"] = "{C:attention}杂技演员+{}",
 				["text"] = {
-					"{C:attention}+#1# Hand Size",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}手牌上限+#1#",
 				},
 			},
 			["chaos_side"] = {
@@ -410,21 +408,20 @@ return {
 				},
 			},
 			["the_end_side"] = {
-				["label"] = "The End",
-				["name"] = "{C:attention}The End{}",
+				["label"] = "戒赌走人",
+				["name"] = "{C:attention}戒赌走人",
 				["text"] = {
-					"{C:attention}This joker is Debuffed",
-					"{C:attention}and set to Eternal",
-					"{C:inactive}(Bypass {C:attention}Perishable{C:inactive})",
-					"{C:inactive}(Bypass {C:attention}Blocker{C:inactive})",
+					"{C:attention}失效，永恒",
+					"{C:inactive}（无视{C:attention}易腐{C:inactive}）",
+					"{C:inactive}（无视{C:attention}阻隔{C:inactive}）",
 				},
 			},
 			["cardist_plus_side"] = {
-				["label"] = "Cardist+",
-				["name"] = "{C:attention}Cardist+{}",
+				["label"] = "耍牌玩家+",
+				["name"] = "{C:attention}耍牌玩家+{}",
 				["text"] = {
-					"{C:attention}Gain +#1# hands",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}出牌次数+#1#",
 				},
 			},
 			["mult_plus_side"] = {
@@ -458,11 +455,11 @@ return {
 				},
 			},
 			["cartomancy_side"] = {
-				["label"] = "Cartomancy",
-				["name"] = "{C:attention}Cartomancy{}",
+				["label"] = "纸牌卜卦",
+				["name"] = "{C:attention}纸牌卜卦",
 				["text"] = {
-					"{C:attention}Creates #1# {C:tarot}Tarot card",
-					"{C:attention}when die is rolled",
+					"{C:attention}掷骰后",
+					"{C:attention}生成#1#张{C:tarot}塔罗牌"
 				},
 			},
 			["planetarium_side"] = {
@@ -491,11 +488,11 @@ return {
 				},
 			},
 			["cartomancy_plus_side"] = {
-				["label"] = "Cartomancy+",
-				["name"] = "{C:attention}Cartomancy+{}",
+				["label"] = "纸牌卜卦+",
+				["name"] = "{C:attention}纸牌卜卦+{}",
 				["text"] = {
-					"{C:attention}Creates #1# {C:tarot}Tarot cards",
-					"{C:attention}when die is rolled",
+					"{C:attention}掷骰后",
+					"{C:attention}生成#1#张{C:tarot}塔罗牌"
 				},
 			},
 			["xmult_plus2_side"] = {
@@ -506,11 +503,11 @@ return {
 				},
 			},
 			["juggler_side"] = {
-				["label"] = "Juggler",
-				["name"] = "{C:attention}Juggler{}",
+				["label"] = "杂技演员",
+				["name"] = "{C:attention}杂技演员{}",
 				["text"] = {
-					"{C:attention}+#1# Hand Size",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}手牌上限+#1#",
 				},
 			},
 			["payout_plus_side"] = {
@@ -536,11 +533,11 @@ return {
 				},
 			},
 			["drunkard_plus_side"] = {
-				["label"] = "Drunkard+",
-				["name"] = "{C:attention}Drunkard+{}",
+				["label"] = "酒蒙子+",
+				["name"] = "{C:attention}酒蒙子+{}",
 				["text"] = {
-					"{C:attention}Gain {C:red}+#1#{C:attention} discard",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}弃牌次数{C:red}+#1#",
 				},
 			},
 			["chips_minus_side"] = {
@@ -591,11 +588,11 @@ return {
 				},
 			},
 			["all_in_side"] = {
-				["label"] = "All In",
-				["name"] = "{C:attention}All In{}",
+				["label"] = "全押",
+				["name"] = "{C:attention}全押",
 				["text"] = {
-					"{C:attention}50% chance of {C:mult}+#1#{C:attention} Mult",
-					"{C:attention}50% chance of {C:mult}-#2#{C:attention} Mult",
+					"{C:attention}{C:mult}+#1#{C:attention}或{C:mult}-#2#{C:attention}倍率",
+					"{C:attention}几率各50%",
 				},
 			},
 			["card_pack_side"] = {
@@ -616,19 +613,19 @@ return {
 				},
 			},
 			["cardist_side"] = {
-				["label"] = "Cardist",
-				["name"] = "{C:attention}Cardist{}",
+				["label"] = "耍牌玩家",
+				["name"] = "{C:attention}耍牌玩家{}",
 				["text"] = {
-					"{C:attention}Gain +#1# hand",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}出牌次数+#1#",
 				},
 			},
 			["drunkard_side"] = {
-				["label"] = "Drunkard",
-				["name"] = "{C:attention}Drunkard{}",
+				["label"] = "酒蒙子",
+				["name"] = "{C:attention}酒蒙子{}",
 				["text"] = {
-					"{C:attention}Gain {C:red}+#1#{C:attention} discard",
-					"{C:attention}when die is rolled",
+				    "{C:attention}掷骰后",
+					"{C:attention}弃牌次数{C:red}+#1#",
 				},
 			},
 		},
