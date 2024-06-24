@@ -9,6 +9,7 @@ return {
 			["k_created"] = "生成！",
 			["b_d6_sides"] = "骰面",
 			["k_d6_booster_pack"] = "六面骰补充包",
+			["k_oops"] = "Oops!",
 		},
 	},
 	["descriptions"] = {
