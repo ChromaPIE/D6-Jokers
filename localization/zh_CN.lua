@@ -8,9 +8,44 @@ return {
 			["k_na"] = "N/A",
 			["k_created"] = "生成！",
 			["b_d6_sides"] = "骰面",
+			["k_d6_booster_pack"] = "六面骰补充包",
 		},
 	},
 	["descriptions"] = {
+		["Other"] = {
+			["p_dsix_d6_jokers_pack"] = {
+				["name"] = "六面骰丑角包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰小丑牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
+			["p_dsix_d6_support_pack"] = {
+				["name"] = "六面骰支援包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰消耗牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
+			["p_dsix_d6_booster_pack"] = {
+				["name"] = "六面骰补充包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰小丑牌{}或{C:joker}消耗牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
+			["p_dsix_d6_mega_booster_pack"] = {
+				["name"] = "超级六面骰补充包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰小丑牌{}或{C:joker}消耗牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
+		},
 		["Joker"] = {
 			["j_dsix_casino_die"] = {
 				["name"] = "赌场骰子",
@@ -79,10 +114,9 @@ return {
 				},
 			},
 			["j_dsix_planet_plus_die"] = {
-				["name"] = "Planet Die+",
+				["name"] = "星球骰子+",
 				["text"] = {
-					"This die was crafted by",
-					"celestial beings",
+					"外星人做的骰子",
 				},
 			},
 			["j_dsix_golden_die"] = {
@@ -99,12 +133,11 @@ return {
 				},
 			},
 			["j_dsix_impure_broke_die"] = {
-				["name"] = "Impure: Broke Die",
+				["name"] = "不纯骰子：破产",
 				["text"] = {
-					"This die was \"gifted\" to die wielders",
-					"deemed responsible for the",
-					"2008 housing market crash",
-					"{C:inactive}(Money required after payout: {C:attention}#1#{C:inactive})",
+					"这份“大礼”是否能唤醒一些",
+					"零八年房地产市场崩盘的记忆？",
+					"{C:inactive}（结算阶段需获得资金：{C:attention}#1#{C:inactive}）",
 				},
 			},
 			["j_dsix_tarot_die"] = {
@@ -138,8 +171,8 @@ return {
 			["j_dsix_chaos_die"] = {
 				["name"] = "Chaos Die",
 				["text"] = {
-					"Unstable, prone to",
-					"increased randomness",
+					"很不稳定",
+					"不止“随机”",
 				},
 			},
 			["j_dsix_basic_die"] = {
@@ -178,10 +211,10 @@ return {
 				},
 			},
 			["j_dsix_chips_plus_die"] = {
-				["name"] = "Chips Die+",
+				["name"] = "筹码骰子+",
 				["text"] = {
-					"Just a really good basic chips",
-					"die, nothing more",
+					"稀松平常的筹码骰子",
+					"但品质更佳"
 				},
 			},
 		},
@@ -195,40 +228,39 @@ return {
 				},
 			},
 			["c_dsix_the_die_wielder"] = {
-				["name"] = "The Die Wielder",
+				["name"] = "掷骰者",
 				["text"] = {
-					"Spawn a random {C:attention}D6 Joker",
+					"随机生成一张{C:attention}六面骰小丑牌",
 				},
 			},
 			["c_dsix_reconstruction"] = {
-				["name"] = "Reconstruction",
+				["name"] = "重构",
 				["text"] = {
-					"{C:attention}Upgrade{} selected {C:attention}D6 Joker{}",
+					"{C:attention}升级{}选定的{C:attention}六面骰小丑牌",
 				},
 			},
 		},
 		["Spectral"] = {
 			["c_dsix_transplant"] = {
-				["name"] = "Transplant",
+				["name"] = "移植",
 				["text"] = {
-					"Set selected D6 Joker's die face",
-					"in position 1 to die face",
-					"in position 6",
+					"选定一张六面骰小丑牌",
+					"将其第一面设为第六面"
 				},
 			},
 			["c_dsix_purification"] = {
-				["name"] = "Purification",
+				["name"] = "提纯",
 				["text"] = {
-					"Spawn an {C:legendary}Impure{} die",
+					"生成一张{C:legendary}不纯{}骰子",
 				},
 			},
 		},
 		["D6 Side"] = {
 			["chips_plus_side"] = {
-				["label"] = "Chips+",
-				["name"] = "{C:attention}Chips+{}",
+				["label"] = "筹码+",
+				["name"] = "{C:attention}筹码+{}",
 				["text"] = {
-					"{C:chips}+#1#{C:attention} Chips",
+					"{C:chips}+#1#{C:attention}筹码",
 				},
 			},
 			["chaos_plus_side"] = {
@@ -249,10 +281,10 @@ return {
 				},
 			},
 			["chips_side"] = {
-				["label"] = "Chips",
-				["name"] = "{C:attention}Chips{}",
+				["label"] = "筹码",
+				["name"] = "{C:attention}筹码",
 				["text"] = {
-					"{C:chips}+#1#{C:attention} Chips",
+					"{C:chips}+#1#{C:attention}筹码",
 				},
 			},
 			["pure_skyrocket_side"] = {
