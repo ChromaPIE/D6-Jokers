@@ -277,7 +277,7 @@ return {
 				["label"] = "姜根汽水+",
 				["name"] = "{C:attention}姜根汽水+{}",
 				["text"] = {
-					"{C:attention}售出本牌时",
+					"{C:attention}售出本牌后",
 					"{C:attention}生成#1#个双倍标签",
 				},
 			},
@@ -412,11 +412,11 @@ return {
 				},
 			},
 			["orbital_plus_side"] = {
-				["label"] = "Orbital+",
-				["name"] = "{C:attention}Orbital+{}",
+				["label"] = "星轨+",
+				["name"] = "{C:attention}星轨+{}",
 				["text"] = {
-					"{C:attention}Gain #1# Orbital Tag",
-					"{C:attention}when this joker is sold",
+					"{C:attention}售出本牌后",
+					"{C:attention}获得#1#个轨道标签",
 				},
 			},
 			["mult_plus2_side"] = {
@@ -468,16 +468,15 @@ return {
 				["label"] = "姜根汽水",
 				["name"] = "{C:attention}姜根汽水{}",
 				["text"] = {
-					"{C:attention}售出本牌时",
+					"{C:attention}售出本牌后",
 					"{C:attention}生成#1#个双倍标签",
 				},
 			},
 			["curse_challenge_side"] = {
-				["label"] = "Curse: Challenge",
-				["name"] = "{C:purple}Curse: Challenge{}",
+				["label"] = "霉运：挑战",
+				["name"] = "{C:purple}霉运：挑战",
 				["text"] = {
-					"{C:purple}Increase the current score",
-					"{C:purple}requirement by {C:attention}#1#X",
+					"{C:purple}当前盲注的最低得分要求{C:attention}X#1#",
 				},
 			},
 			["mult_minus2_side"] = {
@@ -496,28 +495,28 @@ return {
 				},
 			},
 			["planetarium_side"] = {
-				["label"] = "Planetarium",
-				["name"] = "{C:attention}Planetarium{}",
+				["label"] = "星象",
+				["name"] = "{C:attention}星象",
 				["text"] = {
-					"{C:attention}Creates #1# {C:planet}Planet",
-					"{C:attention}card when die is rolled",
+					"{C:attention}掷骰后",
+					"{C:attention}生成#1#张{C:planet}星球牌",
 				},
 			},
 			["card_pack_plus_side"] = {
-				["label"] = "Card Pack+",
-				["name"] = "{C:attention}Card Pack+{}",
+				["label"] = "卡包+",
+				["name"] = "{C:attention}卡包+",
 				["text"] = {
-					"{C:attention}Gain #1# Card Pack Tag",
-					"{C:attention}when this joker is sold",
-					"{C:inactive}(Ethereal, Standard, etc.)",
+					"{C:attention}售出本牌后",
+					"{C:attention}获得#1#个卡包类标签",
+					"{C:inactive}（如空灵标签、标准标签等）",
 				},
 			},
 			["orbital_side"] = {
-				["label"] = "Orbital",
-				["name"] = "{C:attention}Orbital{}",
+				["label"] = "星轨",
+				["name"] = "{C:attention}星轨",
 				["text"] = {
-					"{C:attention}Gain #1# Orbital Tag",
-					"{C:attention}when this joker is sold",
+					"{C:attention}售出本牌后",
+					"{C:attention}获得#1#个轨道标签",
 				},
 			},
 			["cartomancy_plus_side"] = {
@@ -552,10 +551,10 @@ return {
 				},
 			},
 			["chips_minus2_side"] = {
-				["label"] = "Chips--",
-				["name"] = "{C:attention}Chips--{}",
+				["label"] = "筹码--",
+				["name"] = "{C:attention}筹码--",
 				["text"] = {
-					"{C:chips}-#1#{C:attention} Chips",
+					"{C:chips}-#1#{C:attention}筹码",
 				},
 			},
 			["nothing_plus_side"] = {
@@ -574,20 +573,20 @@ return {
 				},
 			},
 			["chips_minus_side"] = {
-				["label"] = "Chips-",
-				["name"] = "{C:attention}Chips-{}",
+				["label"] = "筹码-",
+				["name"] = "{C:attention}筹码-",
 				["text"] = {
-					"{C:chips}-#1#{C:attention} Chips",
+					"{C:chips}-#1#{C:attention}筹码",
 				},
 			},
 			["curse_nullify_side"] = {
-				["label"] = "Curse: Nullify",
-				["name"] = "{C:purple}Curse: Nullify{}",
+				["label"] = "霉运：作废",
+				["name"] = "{C:purple}霉运：作废",
 				["text"] = {
-					"{C:purple}This Joker is {C:attention}Pinned",
-					"{C:purple}The joker to the right",
-					"{C:purple}is {C:attention}Debuffed",
-					"{C:purple}for the rest of the blind",
+					"{C:purple}本牌遭到{C:attention}左极固定",
+					"{C:purple}且本盲注内",
+					"{C:purple}其右侧的小丑牌{C:attention}无效",
+					
 				},
 			},
 			["blocker_side"] = {
@@ -607,10 +606,10 @@ return {
 				},
 			},
 			["chips_plus2_side"] = {
-				["label"] = "Chips++",
-				["name"] = "{C:attention}Chips++{}",
+				["label"] = "筹码++",
+				["name"] = "{C:attention}筹码++",
 				["text"] = {
-					"{C:chips}+#1#{C:attention} Chips",
+					"{C:chips}+#1#{C:attention}筹码",
 				},
 			},
 			["mult_side"] = {
@@ -629,12 +628,12 @@ return {
 				},
 			},
 			["card_pack_side"] = {
-				["label"] = "Card Pack",
-				["name"] = "{C:attention}Card Pack{}",
+				["label"] = "卡包",
+				["name"] = "{C:attention}卡包",
 				["text"] = {
-					"{C:attention}Gain #1# Card Pack Tag",
-					"{C:attention}when this joker is sold",
-					"{C:inactive}(Ethereal, Standard, etc.)",
+					"{C:attention}售出本牌后",
+					"{C:attention}获得#1#个卡包类标签",
+					"{C:inactive}（如空灵标签、标准标签等）",
 				},
 			},
 			["payout_plus2_side"] = {
