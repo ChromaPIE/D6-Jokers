@@ -8,14 +8,24 @@ return {
 			["k_na"] = "N/A",
 			["k_created"] = "生成！",
 			["b_d6_sides"] = "骰面",
-			["k_d6_booster_pack"] = "六面骰补充包",
 			["k_oops"] = "Oops!",
+			["d6_jokers_pack"] = "六面骰小丑包",
+			["d6_support_pack"] = "六面骰支援包",
+			["d6_booster_pack"] = "六面骰补充包",
 		},
 	},
 	["descriptions"] = {
 		["Other"] = {
 			["p_dsix_d6_jokers_pack"] = {
-				["name"] = "六面骰丑角包",
+				["name"] = "六面骰小丑包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰小丑牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
+			["p_dsix_mega_d6_jokers_pack"] = {
+				["name"] = "超级六面骰小丑包",
 				["text"] = {
 					"从至多{C:attention}#2#{}张",
 					"{C:joker}六面骰小丑牌{}中",
@@ -30,6 +40,14 @@ return {
 					"选择{C:attention}#1#{}张"
 				},
 			},
+			["p_dsix_mega_d6_support_pack"] = {
+				["name"] = "超级六面骰支援包",
+				["text"] = {
+					"从至多{C:attention}#2#{}张",
+					"{C:joker}六面骰消耗牌{}中",
+					"选择{C:attention}#1#{}张"
+				},
+			},
 			["p_dsix_d6_booster_pack"] = {
 				["name"] = "六面骰补充包",
 				["text"] = {
@@ -38,7 +56,7 @@ return {
 					"选择{C:attention}#1#{}张"
 				},
 			},
-			["p_dsix_d6_mega_booster_pack"] = {
+			["p_dsix_mega_d6_booster_pack"] = {
 				["name"] = "超级六面骰补充包",
 				["text"] = {
 					"从至多{C:attention}#2#{}张",
@@ -105,7 +123,8 @@ return {
 					"Even the pinacle of dice wielders",
 					"cower in fear",
 					"Nobody knows it's true power...",
-					"{C:inactive}(Total blinds defeated: {C:attention}#1#/#2#{C:inactive})",
+					"{C:inactive}Purification condition:",
+					"{C:inactive}Total blinds defeated: {C:attention}#1#/#2#{C:inactive}",
 				},
 			},
 			["j_dsix_support_die"] = {
@@ -138,7 +157,8 @@ return {
 				["text"] = {
 					"这份“大礼”是否能唤醒一些",
 					"零八年房地产市场崩盘的记忆？",
-					"{C:inactive}（结算阶段需获得资金：{C:attention}#1#{C:inactive}）",
+					"{C:inactive}净化条件：",
+					"{C:inactive}提现后资金数额：{C:attention}#1#",
 				},
 			},
 			["j_dsix_tarot_die"] = {
@@ -237,22 +257,30 @@ return {
 			["c_dsix_reconstruction"] = {
 				["name"] = "重构",
 				["text"] = {
-					"{C:attention}升级{}选定的{C:attention}六面骰小丑牌",
+					"{C:attention}升级{}选定的{C:attention}六面骰小丑牌"
+				},
+			},
+			["c_dsix_transplant"] = {
+				["name"] = "移植",
+				["text"] = {
+					"选定一张{C:attention}六面骰小丑牌",
+					"将其{C:attention}第一面{}设为{C:attention}第六面"
 				},
 			},
 		},
 		["Spectral"] = {
-			["c_dsix_transplant"] = {
-				["name"] = "移植",
-				["text"] = {
-					"选定一张六面骰小丑牌",
-					"将其第一面设为第六面"
-				},
-			},
 			["c_dsix_purification"] = {
 				["name"] = "提纯",
 				["text"] = {
-					"生成一张{C:legendary}不纯{}骰子",
+					"Spawn an {C:legendary}Impure Die{}",
+				},
+			},
+			["c_dsix_override"] = {
+				["name"] = "Override",
+				["text"] = {
+					"Set all {C:attention}D6 Sides",
+					"to this cards",
+					"selected {C:attention}D6 Side"
 				},
 			},
 		},
@@ -261,7 +289,7 @@ return {
 				["label"] = "筹码+",
 				["name"] = "{C:attention}筹码+{}",
 				["text"] = {
-					"{C:chips}+#1#{C:attention}筹码",
+					"{C:chips}+#1#{C:attention}筹码"
 				},
 			},
 			["chaos_plus_side"] = {
@@ -289,11 +317,10 @@ return {
 				},
 			},
 			["pure_skyrocket_side"] = {
-				["label"] = "Pure: Skyrocket",
-				["name"] = "{C:blue}Pure: Skyrocket{}",
+				["label"] = "纯净骰子：窜天猴",
+				["name"] = "{C:blue}纯净骰子：窜天猴",
 				["text"] = {
-					"{C:blue}Interest earned is",
-					"{C:blue}increased by {C:attention}#1#X",
+					"{C:blue}可获资金{C:attention}X#1#",
 				},
 			},
 			["juggler_plus_side"] = {
@@ -336,10 +363,10 @@ return {
 				},
 			},
 			["curse_bear_market_side"] = {
-				["label"] = "Curse: Bear Market",
-				["name"] = "{C:purple}Curse: Bear Market{}",
+				["label"] = "诅咒：熊市",
+				["name"] = "{C:purple}诅咒：熊市",
 				["text"] = {
-					"{C:purple}Payout screen is {C:attention}disabled",
+					"{C:purple}提现阶段{C:attention}无法获得资金",
 				},
 			},
 			["nothing_plus2_side"] = {
@@ -393,7 +420,7 @@ return {
 				["name"] = "{C:attention}空+++{}",
 				["text"] = {
 					"{C:attention}有效果了？！",
-    			    "{C:attention}骗你的。依然无效果"
+    			    "{X:mult,C:white}X#1#{C:attention}倍率",
 				},
 			},
 			["nothing_side"] = {
@@ -428,9 +455,10 @@ return {
 			},
 			["pure_return_investment_side"] = {
 				["label"] = "Pure: Return Investment",
-				["name"] = "{C:blue}Pure: Return Investment{}",
+				["name"] = "{C:blue}Pure: Return Investment",
 				["text"] = {
-					"{C:blue}Earn {C:money}$#1#{C:blue} per {C:money}$#2#{C:blue} spent",
+					"{C:blue}Earn {C:money}$#1#{C:blue} per",
+					"{C:money}$#2#{C:blue} lost or spent"
 				},
 			},
 			["xmult_plus_side"] = {
