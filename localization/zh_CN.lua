@@ -12,6 +12,9 @@ return {
 			["d6_jokers_pack"] = "六面骰小丑包",
 			["d6_support_pack"] = "六面骰支援包",
 			["d6_booster_pack"] = "六面骰补充包",
+			["k_dsix_infected"] = "感染",
+			["k_delevel_ex"] = "降级！",
+			["k_boosted_ex"] = "一骰之力！",
 		},
 	},
 	["descriptions"] = {
@@ -64,93 +67,86 @@ return {
 					"选择{C:attention}#1#{}张"
 				},
 			},
-			-- TODO: translate
 			["infection_default"] = {
-				["name"] = "Infected",
+				["name"] = "传染",
 				["text"] = {
-					"Card is {C:attention}Debuffed{}",
-					"{C:green}#1# in #2#{} to infect",
-					"another card of same type"
+					"卡牌{C:attention}失效",
+					"有{C:green}#1#/#2#{}的几率",
+					"感染另一张同种卡牌"
 				},
 			},
 			["d6_side_edition_polychrome"] = {
-                ["name"] = "Polychrome",
+                ["name"] = "多彩",
                 ["text"] = {
-					"Selected D6 Side has",
-					"{C:dark_edition}Polychrome{} edition",
-                    "{X:mult,C:white} X#1# {} Mult"
+					"掷得骰面为{C:dark_edition}多彩{}版本",
+                    "{X:mult,C:white} X#1# {}倍率"
                 }
 			},
 			["d6_side_edition_holo"] = {
-                ["name"] = "Holographic",
+                ["name"] = "镭射",
                 ["text"] = {
-					"Selected D6 Side has",
-					"{C:dark_edition}Holographic{} edition",
-                    "{C:mult}+#1#{} Mult"
+					"掷得骰面为{C:dark_edition}镭射{}版本",
+                    "{C:mult}+#1#{}倍率"
                 }
 			},
 			["d6_side_edition_foil"] = {
-                ["name"] = "Foil",
+                ["name"] = "闪箔",
                 ["text"] = {
-					"Selected D6 Side has",
-					"{C:dark_edition}Foil{} edition",
-                    "{C:chips}+#1#{} chips"
+					"掷得骰面为{C:dark_edition}闪箔{}版本",
+                    "{C:chips}+#1#{}筹码"
                 }
 			},
 			["d6_joker_linked"] = {
-				["name"] = "Linked",
+				["name"] = "联结",
 				["text"] = {
-					"This D6 Joker cannot",
-					"change selected {C:attention}D6 Side"
+					"该六面骰小丑牌",
+					"无法改变掷得{C:attention}骰面"
 				},
 			},
 		},
 		["Joker"] = {
-			-- TODO: translate
 			["j_dsix_spectral_die"] = {
-				["name"] = "Spectral Die",
+				["name"] = "幻灵骰子",
 				["text"] = {
-					"You feel the presense",
-					"of ghosts",
+					"你感受到了",
+					"鬼魂的存在",
 				},
 			},
 			["j_dsix_spectral_plus_die"] = {
-				["name"] = "Spectral Die+",
+				["name"] = "幻灵骰子+",
 				["text"] = {
-					"The dead will rise",
-					"by the power of this die!"
+					"一骰落地，死得复生！"
 				},
 			},
 			["j_dsix_interstellar_die"] = {
-				["name"] = "Interstellar Die",
+				["name"] = "星际骰子",
 				["text"] = {
-					"An abandoned spacecraft in",
-					"the shape of a die",
-					"Still capable of transmitting data",
+					"看似只是一颗骰子",
+					"实则是一艘星际飞船",
+					"虽遭废弃，但尚能传输数据",
 				},
 			},
 			["j_dsix_interstellar_plus_die"] = {
-				["name"] = "Interstellar Die",
+				["name"] = "星际骰子+",
 				["text"] = {
-					"A functioning space ship in",
-					"the shape of a die",
-					"Fully capable of data collection",
+					"看似只是一颗骰子",
+					"实则是一艘星际飞船",
+					"部件完好，运作正常",
+					"收集数据不在话下",
 				},
 			},
 			["j_dsix_impure_plague_die"] = {
-				["name"] = "Impure: Plague Die",
+				["name"] = "不纯骰子：瘟疫",
 				["text"] = {
-					"All that these die wielders wanted",
-					"to do is help the best they can...",
-					"{C:inactive}Purification condition:",
-					"{C:inactive}Infected Jokers/Consumables: {C:attention}#1#{C:inactive}",
+					"掷骰者们也得投身抗疫第一线了……",
+					"{C:inactive}净化条件：",
+					"{C:inactive}小丑牌/消耗牌感染数：{C:attention}#1#",
 				},
 			},
 			["j_dsix_pure_medical_die"] = {
-				["name"] = "Pure: Medical Die",
+				["name"] = "纯净骰子：清零",
 				["text"] = {
-					"Any and all would will be healed",
-					"through the power held in this die",
+					"“这骰子比连花清瘟管用多了”",
 				},
 			},
 			["j_dsix_casino_die"] = {
@@ -317,25 +313,16 @@ return {
 			},
 		},
 		["Enhanced"] = {
-			-- TODO: translate
 			["m_dsix_booster"] = {
-				["name"] = "Booster",
+				["name"] = "一掷之力",
 				["text"] = {
-					"{C:chips}+#1#{} chips",
-					"{C:mult}+#2#{} Mult",
-					"{X:mult,C:white} X#3# {} Mult",
+					"{C:chips}+#1#{}筹码",
+					"{C:mult}+#2#{}倍率",
+					"{X:mult,C:white} X#3# {}倍率",
 				},
 			},
 		},
 		["Tarot"] = {
-			["c_dsix_concentration"] = {
-				["name"] = "专注",
-				["text"] = {
-					"{C:attention}升级{}所选定的",
-                    "{C:attention}六面骰小丑牌",
-                    "的所有骰面"
-				},
-			},
 			["c_dsix_the_die_wielder"] = {
 				["name"] = "掷骰者",
 				["text"] = {
@@ -355,6 +342,22 @@ return {
 					"将其{C:attention}第一面{}设为{C:attention}第六面"
 				},
 			},
+			["c_dsix_lightshow"] = {
+				["name"] = "灯光秀",
+				["text"] = {
+					"所选定的{C:attention}六面骰小丑牌",
+					"的所有{C:attention}骰面",
+					"均随机获得一个{C:dark_edition}版本",
+				},
+			},
+			["c_dsix_weighted"] = {
+				["name"] = "加权",
+				["text"] = {
+					"锁定选定的",
+					"{C:attention}六面骰小丑牌",
+					"的{C:attention}骰面",
+				},
+			},
 		},
 		["Spectral"] = {
 			["c_dsix_purification"] = {
@@ -368,6 +371,22 @@ return {
 				["text"] = {
 					"将选定骰子的所有{C:attention}六面",
 					"全部替换为本牌的{C:attention}当前面"
+				},
+			},
+			["c_dsix_concentration"] = {
+				["name"] = "专注",
+				["text"] = {
+					"{C:attention}升级{}所选定的",
+                    "{C:attention}六面骰小丑牌",
+                    "的所有骰面"
+				},
+			},
+			["c_dsix_duplication"] = {
+				["name"] = "复制",
+				["text"] = {
+					"将所选定的{C:attention}六面骰小丑牌",
+					"的当前{C:attention}骰面",
+					"复制至相邻的{C:attention}骰面",
 				},
 			},
 		},
@@ -386,6 +405,42 @@ return {
 					"{C:attention}掷骰后",
 					"{C:attention}随机复制一种骰子能力",
 					"{C:inactive}（当前复制：{C:attention}#1#{C:inactive}）",
+				},
+			},
+			["moon_side"] = {
+				["label"] = "月球",
+				["name"] = "{C:attention}月球",
+				["text"] = {
+					"{C:attention}掷骰后",
+					"{C:attention}将随机一种牌型",
+					"{C:attention}提升#1#级",
+				},
+			},
+			["moon_plus_side"] = {
+				["label"] = "月球+",
+				["name"] = "{C:attention}月球+",
+				["text"] = {
+					"{C:attention}掷骰后",
+					"{C:attention}将所有牌型",
+					"{C:attention}提升#1#级",
+				},
+			},
+			["moon_minus_side"] = {
+				["label"] = "月球-",
+				["name"] = "{C:attention}月球-",
+				["text"] = {
+					"{C:attention}掷骰后",
+					"{C:attention}将随机一种牌型",
+					"{C:attention}降低#1#级",
+				},
+			},
+			["moon_minus2_side"] = {
+				["label"] = "月球--",
+				["name"] = "{C:attention}月球--",
+				["text"] = {
+					"{C:attention}掷骰后",
+					"{C:attention}将所有牌型",
+					"{C:attention}降低#1#级",
 				},
 			},
 			["root_beer_plus_side"] = {
@@ -547,6 +602,22 @@ return {
 				["text"] = {
 					"{C:blue}每花费或损失{C:money}$#2#",
 					"{C:blue}获得{C:money}$#1#"
+				},
+			},
+			["pure_booster_side"] = {
+				["label"] = "Pure: Booster",
+				["name"] = "{C:blue}Pure: Booster{}",
+				["text"] = {
+					"{C:blue}All unscored cards convert",
+					"{C:blue}to {C:attention}Boosted{C:blue} cards",
+				},
+			},
+			["pure_quality_care_side"] = {
+				["label"] = "Pure: Quality Care",
+				["name"] = "{C:blue}Pure: Quality Care{}",
+				["text"] = {
+					"{C:attention}Retrigger {C:blue}all",
+					"{C:attention}scored cards #1# time",
 				},
 			},
 			["xmult_plus_side"] = {
@@ -771,3 +842,5 @@ return {
 		},
 	},
 }
+
+-- Simplified Chinese localization by ChromaPIE
