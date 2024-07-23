@@ -155,9 +155,9 @@ SMODS.D6_Side = SMODS.GameObject:extend {
 			local total_d6_sides = {}
 			for i = 1, #G.jokers.cards do
 				if (G.jokers.cards[i].debuff and not ignore_debuff) or not G.jokers.cards[i].config.center.d6_joker then
-				elseif G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face] == die_side_key then 
+				elseif G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face].key == die_side_key then 
 					total_d6_sides[#total_d6_sides+1] = {card = G.jokers.cards[i], side_config = SMODS.D6_Sides[G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face].key]}
-				elseif G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face].extra and G.jokers.cards[i].ability.extra.chaos_selected_die == die_side_key then
+				elseif G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face].key == "chaos_side" and G.jokers.cards[i].ability.extra.local_d6_sides[G.jokers.cards[i].ability.extra.selected_d6_face].extra.selected_die_key == die_side_key then
 					total_d6_sides[#total_d6_sides+1] = {card = G.jokers.cards[i], side_config = SMODS.D6_Sides[G.jokers.cards[i].ability.extra.chaos_selected_die]}
 				end
 			end
@@ -175,14 +175,16 @@ SMODS.D6_Side = SMODS.GameObject:extend {
 			edition = nil,
 		}
 
-		if gen_config.edition.forced_edition then
+		if gen_config.edition.forced_edition and G.P_D6_EDITIONS[gen_config.edition.forced_edition] then
 			local edi_config = copy_table(G.P_D6_EDITIONS[gen_config.edition.forced_edition])
 			target.edition = {key = edi_config.key, shaders = edi_config.shaders, config = edi_config.config}
 		elseif not gen_config.edition.no_edition then
 			local edition = poll_edition("d6_side_gen", nil, nil, gen_config.edition.guaranteed or false, {'e_polychrome', 'e_holo', 'e_foil'}) --base game editions
-			if edition then 
+			if edition and G.P_D6_EDITIONS[edition] then 
 				local edi_config = copy_table(G.P_D6_EDITIONS[edition])
 				target.edition = {key = edi_config.key, shaders = edi_config.shaders, config = edi_config.config}
+			elseif edition ~= nil and G.P_D6_EDITIONS[edition] == nil then
+				sendWarnMessage("D6 JOKERS | Failed to apply edition to D6 Side: "..tostring(edition)..". does not exist in P_D6_EDITIONS")
 			end
 		end
 
@@ -289,11 +291,17 @@ SMODS.D6_Joker = SMODS.Joker:extend {
 		end
 	end,
 	update = function(self, card, dt)
-		if G.jokers then
+		if card.ability.extra.selected_d6_face % 1 > 0 then card.ability.extra.selected_d6_face = math.round(card.ability.extra.selected_d6_face) end
+		if card.ability.extra.selected_d6_face < 0 then card.ability.extra.selected_d6_face = card.ability.extra.selected_d6_face*-1 end
+		card.ability.extra.selected_d6_face = math.clamp(1, card.ability.extra.selected_d6_face, 6)
+		if G.jokers and card.ability.extra.local_d6_sides[card.ability.extra.selected_d6_face] then
 			local d6_side = SMODS.D6_Sides[card.ability.extra.local_d6_sides[card.ability.extra.selected_d6_face].key]
 			if d6_side.update and type(d6_side.update) == "function" then
 				d6_side:update(card, dt, card.ability.extra.local_d6_sides[card.ability.extra.selected_d6_face])
 			end
+		elseif card.ability.extra.local_d6_sides[card.ability.extra.selected_d6_face] == nil then
+			sendWarnMessage("D6 Joker does not have local_d6_sides info. Printing extra now: ")
+			print(tprint(card.ability.extra))
 		end
 	end,
 }
@@ -376,7 +384,7 @@ function math.round(n, deci) deci = 10^(deci or 0) return math.floor(n*deci+.5)/
 
 SMODS.current_mod.custom_collection_tabs = function()
 	return {
-		UIBox_button({button = 'your_collection_d6_sides', label = {localize('b_d6_sides')}, count = G.ACTIVE_MOD_UI and modsCollectionTally(G.P_D6_SIDES) or G.DISCOVER_TALLIES.d6_sides, minw = 5, minh = 2.0, id = 'your_collection_d6_sides', focus_args = {snap_to = true}, func = 'is_collection_empty'})
+		UIBox_button({button = 'your_collection_d6_sides', label = {localize('b_d6_sides')}, count = G.ACTIVE_MOD_UI and modsCollectionTally(G.P_D6_SIDES) or G.DISCOVER_TALLIES.d6_sides, minw = 5, minh = 2.0, id = 'your_collection_d6_sides', focus_args = {snap_to = true}})
 	}
 end
 
