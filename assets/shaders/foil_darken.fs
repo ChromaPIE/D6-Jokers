@@ -102,8 +102,8 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     vec2 adjusted_uv = uv - vec2(0.5, 0.5);
     adjusted_uv.x = adjusted_uv.x*texture_details.b/texture_details.a;
 
-    number low = min(tex.r, min(tex.g, tex.b))*5;
-    number high = max(tex.r, max(tex.g, tex.b))/5;
+    number low = min(tex.r, min(tex.g, tex.b))*5.;
+    number high = max(tex.r, max(tex.g, tex.b))/5.;
 	number delta = min(high, max(0.5, 1. - low));
 
     number fac = max(min(2.*sin((length(90.*adjusted_uv) + foil_darken.r*2.) + 3.*(1.+0.8*cos(length(113.1121*adjusted_uv) - foil_darken.r*3.121))) - 1. - max(5.-length(90.*adjusted_uv), 0.), 1.), 0.);
@@ -118,12 +118,12 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     tex.r = tex.r-delta + delta*maxfac*0.3;
     tex.g = tex.g-delta + delta*maxfac*0.3;
     tex.b = tex.b + delta*maxfac*1.9;
-    tex.a = min(tex.a, 0.6*tex.a + 1.2*min(1, maxfac*0.2))*100;
+    tex.a = min(tex.a, 0.6*tex.a + 1.2*min(1., maxfac*0.2))*100.;
 
 	tex.r = tex.r*0.6;
     tex.g = tex.g*0.6;
     tex.b = tex.b*0.6;
-    tex.a = tex.a*2;
+    tex.a = tex.a*2.;
 
     return dissolve_mask(tex, texture_coords, uv);
 }
