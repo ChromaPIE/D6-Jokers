@@ -3,7 +3,8 @@ local tarot_info = SMODS.Consumable({
 	key = "override",
 	set = "Spectral",
 	loc_txt = {},
-	pos = {x=0, y=0},
+	pos = {x=0, y=1},
+	atlas = "d6_consumables",
 	cost = 4,
 	discovered = true,
 	config = {extra = {selected_d6_face = 1, local_d6_sides = {}}},
@@ -89,6 +90,19 @@ local tarot_info = SMODS.Consumable({
 				end
 			end
             return true end }))
+	end,
+	update = function(self, card, dt)
+		if card.ability.extra.selected_d6_face % 1 > 0 then card.ability.extra.selected_d6_face = math.round(card.ability.extra.selected_d6_face) end
+		if card.ability.extra.selected_d6_face < 0 then card.ability.extra.selected_d6_face = card.ability.extra.selected_d6_face*-1 end
+		card.ability.extra.selected_d6_face = math.clamp(1, card.ability.extra.selected_d6_face, 6)
+	end,
+	in_pool = function(self)
+		local has_d6_joker
+		for i = 1, #G.jokers.cards do
+			if G.jokers.cards[i].config.center.d6_joker then has_d6_joker = true end
+		end
+		print("d6_consumable_no_d6_jokers: "..tostring((pseudorandom('d6_consumable_no_d6_jokers') >= 0.5) or has_d6_joker == true))
+		if (pseudorandom('d6_consumable_no_d6_jokers') >= 0.5) or has_d6_joker == true then return true end
 	end,
 	register = function(self, order)
 		if order and order == self.order then
